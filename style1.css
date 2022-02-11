@@ -1,0 +1,415 @@
+* {
+    padding: 0;
+    margin: 0; 
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-image: url('img/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.container{
+    width: 65%;
+    height: auto;
+    /*background: #00CED1;*/
+    background-color: rgba(162,112,245,0.9);
+    margin:0 auto;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    justify-content: space-around;
+    align-items:center;
+}
+
+/* Navbar */
+nav {
+      display: flex;
+      background-color: rgb(14,255,0);
+      justify-content: space-around;
+      text-align: center;
+      /* padding: 20px 0; */
+      color: rgb(255,255,255);
+      height: 50px;
+      align-items: center;
+      background-image: url('img/bg1.jpg');
+      
+}
+
+nav .logo {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px;
+    
+}
+
+nav ul {
+        display: flex;
+        list-style: none;
+        width: 40%;
+        justify-content: space-between;
+}
+
+nav ul li a {
+    color: rgb(255,255,255);
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+nav ul li a:hover {
+    color: rgb(255,255,255);
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -5px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(255,255,255);
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+
+/* Hamburger Menu Animation*/
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+    
+    
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+    
+    
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg)translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+
+article {
+    width: 98.8%;
+    height: auto;
+    border-radius: 3px;
+    margin: 5px 5px 5px 3px;
+    border: 2px solid #ffa500;
+    clear: both;
+}
+
+article p {
+    padding: 5px 6px 5px 5px;
+    line-height: 1.5; 
+    color: #fff;
+    font-family: Georgia;
+}
+article .konten {
+    width: auto;
+    height: auto;
+    margin: 5px 5px 5px 3px;
+    border-radius: 3px;
+    border: 2px solid #53ffbd;
+    float: left;
+    background-color:rgba(37,108,31,0.5);
+}
+
+article .isi {
+    width: 98.5%;
+    height: auto;
+    margin: 5px 5px 5px 5px;
+    border-radius: 3px;
+    border: 2px solid gainsboro;
+    float: left;
+}
+article .isi .judul {
+    font-size: xx-large;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: Georgia;
+    color: rgb(30,248,186);
+}
+article .isi p {
+    margin-top: 0;
+}
+article .isi img {
+    float: left;
+    margin: 5px 5px 5px 5px;
+}
+
+article .konten img {
+    width: 95.8%;
+    height: 150px;
+    margin: 9px 5px 5px 9px;
+
+}
+article .konten:hover {
+    opacity:0.9;
+
+}
+article .konten .judul a {
+    margin-left: 5px;
+    text-decoration: none;
+    font-size:x-large;
+    color: #ffffff;
+    font-family: Georgia;
+}
+
+article .konten a:hover {
+    opacity:0.9;
+}
+
+footer {
+    clear: both;
+    width: 98.8%;
+    height: auto;
+    text-align: center;
+    margin: 5px 5px 5px 5px;
+    border-radius: 3px;
+    border-bottom: 1px solid gainsboro;
+    padding-top: 15px;
+    padding-bottom: 15px;  
+}
+
+
+@media screen and (max-width:1080px) {
+
+    .container, article, footer {
+        float: none;
+        width: 98%;
+   }
+   article .konten {
+    float: left;
+    width: 48%;
+   }
+
+   article .konten img {
+    height: auto;
+   }
+
+}
+
+@media screen and (max-width:780px){
+    /* For tablets: */
+    .container, article, footer, article .konten {
+        float: none;
+        width: 98%;
+   }
+    .menu-toggle {
+        display: flex;
+    }
+   
+nav ul {
+        position: absolute;
+        right: 0;
+        top: 50px;
+        width: 40%;
+        height: 80%;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(131,28,227);
+        z-index: 1;
+        transform: translateX(0%);
+        transition: all 1s;
+        opacity: 0;
+        
+        
+    }
+    
+nav ul.slide {
+    transform: translateX(0);
+    opacity: 1;
+    
+}
+body {
+ background-image: url('img/bg3.png');
+ background-repeat:repeat;
+ background-size: 100% 100%;
+ width: 100%;
+ height: 100vh;
+ overflow-x: hidden;
+}
+   article .konten img {
+    height: auto;
+   }
+ 
+ body {
+ background-image: url('img/bg3.png');
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ width: 100%;
+ height: 100vh;
+ overflow-x: hidden;
+}
+ 
+}
+
+/*RESPONSIVE ABSENSI*/
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {  
+  height: 100%;
+}
+@supports (--custom:property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }  
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }  
+}
+
+/*FUNGSI SCROLL*/
+#scroll{
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ overflow: scroll;
+ padding: auto;
+ 
+}
+
+/*TABLE*/
+.table1 th, td {
+    font-family: sans-serif;
+    color: #ffffff;
+    border-collapse:collapse;
+    width: 50%;
+    height: 50%;
+    border: 94px solid #dc143c;
+    cellspacing: 0px;
+    
+    
+}
+ 
+.table-container {
+    overflow: auto;
+}
+
+.table1 tr th{
+    background: #ffffff;
+    color: #ffffff;
+    font-size: 30px;
+    /*padding: 10px 80px;*/
+    text-transform: uppercase;
+    }
+ 
+.table1, th, td {
+    /*padding: 10px 10px;*/
+    text-align: center;
+    text-transform: uppercase;
+}
+ 
+.table1 tr:hover {
+    background-color: #ffffff;
+}
+ 
+.table1 td:hover {
+    background-color: #00ffff;
+} 
+ 
+.table1 th:hover {
+    background-color: #00ff00;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    /*padding: 4px 5px;*/
+    background: #35a9db;
+    background-position-x: 0px;
+    font-weight: normal;
+}
+/*.table1 th:nth-child(even) {
+    background-color: #f2f2f2;
+}
+*/
+#yow{
+    background: #35A9DB;
+    color: #fff;
+    font-weight: normal;
+    font-size: 20px ;
+}
+
+#kontak{
+
+width: 100px;
+height: 100px;
+border-radius: 100%;
+border: 4px solid #00ff00;
+
+}
+
+#gmail{
+
+width: 100px;
+height: 100px;
+border-radius: 100%;
+border: 4px solid #00ffff;
+
+}
+
+#navbar {
+    overflow: hidden;
+    background: linear-gradient(to bottom, #ffa500 30%, #ff4500 85%);
+  }
+  
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
